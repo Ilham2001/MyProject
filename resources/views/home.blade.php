@@ -18,7 +18,7 @@
         <li class="nav-item">
             <a class="nav-link" href="#">Finances</a>
         </li>
-</ul>
-@yield('menu-content')
+    </ul>
+
 
 @endsection

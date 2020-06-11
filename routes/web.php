@@ -57,8 +57,4 @@ Route::resource('clients','ClientController');
  * Demand Routes
  */
 Route::post('/demands','DemandController@store');
-
-
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');

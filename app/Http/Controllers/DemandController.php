@@ -52,9 +52,7 @@ class DemandController extends Controller
         //dd($demand);
 
         if($demand->type_demand == "Intervention") {
-            //dd('here');
             $intervention = new Intervention;
-            //dd($demand);
             $intervention->id_demand = $demand->id;
             $intervention->desiredDate = request('desiredDate');
             $intervention->desiredTime = request('desiredTime');

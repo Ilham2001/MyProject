@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Building;
+use App\Client;
 use Illuminate\Http\Request;
 
 class BuildingController extends Controller
@@ -14,7 +15,8 @@ class BuildingController extends Controller
      */
     public function index()
     {
-        //
+        $client = Client::find(1);	
+        dd($client->buildings);
     }
 
     /**

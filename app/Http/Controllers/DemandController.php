@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Quote;
 use App\Demand;
 use App\Intervention;

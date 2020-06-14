@@ -14,7 +14,8 @@ class InterventionController extends Controller
      */
     public function index()
     {
-        return view('onglets.interventions');
+        $interventions = DB::table('interventions')->get();
+        return view('onglets/interventions',compact('interventions'));
     }
 
     /**

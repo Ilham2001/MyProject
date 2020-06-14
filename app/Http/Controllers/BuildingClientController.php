@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\ClientBuilding;
+use App\BuildingClient;
+use App\Client;
+use App\Building;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class ClientBuildingController extends Controller
+class BuildingClientController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +17,12 @@ class ClientBuildingController extends Controller
      */
     public function index()
     {
-        //
+        $clients = Client::find(1);
+        //dd($clients->buildings);
+        foreach($clients->buildings as $building) {
+            echo $building->buildingName;
+        }
+
     }
 
     /**
@@ -41,10 +49,10 @@ class ClientBuildingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\ClientBuilding  $clientBuilding
+     * @param  \App\BuildingClient  $buildingClient
      * @return \Illuminate\Http\Response
      */
-    public function show(ClientBuilding $clientBuilding)
+    public function show(BuildingClient $buildingClient)
     {
         //
     }
@@ -52,10 +60,10 @@ class ClientBuildingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\ClientBuilding  $clientBuilding
+     * @param  \App\BuildingClient  $buildingClient
      * @return \Illuminate\Http\Response
      */
-    public function edit(ClientBuilding $clientBuilding)
+    public function edit(BuildingClient $buildingClient)
     {
         //
     }
@@ -64,10 +72,10 @@ class ClientBuildingController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ClientBuilding  $clientBuilding
+     * @param  \App\BuildingClient  $buildingClient
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ClientBuilding $clientBuilding)
+    public function update(Request $request, BuildingClient $buildingClient)
     {
         //
     }
@@ -75,10 +83,10 @@ class ClientBuildingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\ClientBuilding  $clientBuilding
+     * @param  \App\BuildingClient  $buildingClient
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ClientBuilding $clientBuilding)
+    public function destroy(BuildingClient $buildingClient)
     {
         //
     }

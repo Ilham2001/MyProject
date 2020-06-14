@@ -20,6 +20,10 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <style>
+   
+  </style>
+
 </head>
 <body>
     <div id="app">
@@ -75,7 +79,24 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            <div class="main">
+            <!-- SIDEBAR -->
+                <div class="sidebar">
+                    <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
+                    </form>
+                    <ul class="nav navbar">
+                        <li class="nav-item">Immeuble 1</li>
+                        <li class="nav-item">Immeuble 2</li>
+                    </ul>
+                </div>   
+                <!-- OUTER CONTAINER -->
+                <div class="outer-container">
+                    @yield('content')
+                </div>
+            </div>
+            
         </main>
     </div>
 </body>

@@ -121,16 +121,15 @@
         <tbody>
             @foreach($demands as $demand)
             <tr>
-                <td>{{ now()->format("Y-m-d") }}</td>
+                <td>{{ $demand->date_demand }}</td>
                 <td>{{ $demand->type_demand }}</td>
-                <td>{{ $demand->content_demand }}</td>
-                <td>Vois plus de détails</td>   
+                <td style="width:45%;">{{ $demand->content_demand }}</td>
+                <td><a href="">Vois plus de détails</a></td>   
             </tr>
             @endforeach
         </tbody>
     </table>
 </div>
-
 @endsection
 
 <!-- JS -->

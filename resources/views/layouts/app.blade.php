@@ -87,8 +87,9 @@
                         <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
                     </form>
                     <ul class="nav navbar">
-                        <li class="nav-item">Immeuble 1</li>
-                        <li class="nav-item">Immeuble 2</li>
+                    @foreach($clients->buildings as $building)
+                        {{ $building->buildingName }}
+                    @endforeach
                     </ul>
                 </div>   
                 <!-- OUTER CONTAINER -->

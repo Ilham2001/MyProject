@@ -15,11 +15,10 @@ class CreateBuildingClientTable extends Migration
     {
         Schema::create('building_client', function (Blueprint $table) {
             $table->id();
-            $table->string('test');
             $table->integer('building_id')->unsigned();
             $table->foreign('building_id')->references('id_building')->on('buildings');
             $table->integer('client_id')->unsigned();
-            $table->foreign('client_id')->references('id_client')->on('clients');
+            $table->foreign('client_id')->references('id')->on('clients');
             $table->timestamps();
         });
     }

@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use App\BuildingClient;
 use App\Client;
-use App\Building;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class BuildingClientController extends Controller
 {
@@ -22,7 +20,6 @@ class BuildingClientController extends Controller
         foreach($clients->buildings as $building) {
             echo $building->buildingName;
         }
-
     }
 
     /**

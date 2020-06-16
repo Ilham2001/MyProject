@@ -14,7 +14,7 @@ class CreateBuildingsTable extends Migration
     public function up()
     {
         Schema::create('buildings', function (Blueprint $table) {
-            $table->increments(('id_building'));
+            $table->increments('id_building');
             $table->string('buildingRef');
             $table->string('adress');
             $table->string('zipcode');

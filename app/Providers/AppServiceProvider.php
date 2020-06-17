@@ -26,7 +26,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('layouts.app', function($view) {
-            $clients = Client::find(1);
+            $id = 1;
+            $clients = Client::find($id);
             
             $view->with('clients', $clients);
           });

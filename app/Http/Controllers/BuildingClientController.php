@@ -15,8 +15,18 @@ class BuildingClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::find(1);
+        /*$clients = Client::find(1);
         //dd($clients->buildings);
+        foreach($clients->buildings as $building) {
+            echo $building->buildingName;
+        }*/
+        
+        $user = User::find(1);
+
+        $client_id = $user->clients->id;
+
+        $clients = Client::find($client_id);
+
         foreach($clients->buildings as $building) {
             echo $building->buildingName;
         }

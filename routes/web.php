@@ -64,10 +64,10 @@ Route::get('/documents','DocumentController@index');
  */
 Route::post('/demands','DemandController@store');
 Route::get('/home', 'HomeController@index')->name('home');
-//Route::get('/demands', 'BuildingController@index');
 
 /**
  * Intervention Routes
  */
 
  Route::get('/buildings','BuildingClientController@index');
+ Route::get('/clients','UserController@index');

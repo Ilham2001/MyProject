@@ -48,13 +48,14 @@ class DemandController extends Controller
         $demand->type_demand = request('type_choice');
         $demand->content_demand = request('content');
         $demand->save();
-        //dd($demand);
+        
 
-        if($demand->type_demand == "Intervention") {
+       /* if($demand->type_demand == "Intervention") {
             $intervention = new Intervention;
             $intervention->id_demand = $demand->id;
             $intervention->desiredDate = request('desiredDate');
             $intervention->desiredTime = request('desiredTime');
+            dd($intervention);
             $intervention->save();
 
         }
@@ -70,10 +71,10 @@ class DemandController extends Controller
                 'clientEmail' => 'required|email',
                 'content' => 'required'
             ]);*/
-            $data = "lilham";
+           /* $data = "lilham";
             Mail::to('ilham.lazar.01@gmail.com')->send(new SendMail($data));
             return 'Email sent';
-        }
+        }*/
         return redirect()->back()->withSuccess('Votre demande a été ajouté avec succès');
     }
 

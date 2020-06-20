@@ -12,4 +12,9 @@ class Demand extends Model
         'type_demand',
         'content_demand'
     ];
+
+    public function intervention()
+    {
+        return $this->hasMany('App\Intervention','id_intervention');
+    }
 }

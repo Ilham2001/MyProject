@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddIdClientToUsersTable extends Migration
+class AddLocationToInterventionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class AddIdClientToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //$table->unsignedInteger('client_id');
-            //$table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');;
+        Schema::table('interventions', function (Blueprint $table) {
+            $table->string('location_intervention');
         });
     }
 
@@ -26,8 +25,8 @@ class AddIdClientToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            Schema::dropIfExists('client_id');
+        Schema::table('interventions', function (Blueprint $table) {
+            Schema::dropIfExists('location_intervention');
         });
     }
 }

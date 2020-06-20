@@ -16,9 +16,9 @@ class CreateBuildingClientTable extends Migration
         Schema::create('building_client', function (Blueprint $table) {
             $table->id();
             $table->integer('building_id')->unsigned();
-            $table->foreign('building_id')->references('id_building')->on('buildings');
+            $table->foreign('building_id')->references('id_building')->on('buildings')->onDelete('cascade');;
             $table->integer('client_id')->unsigned();
-            $table->foreign('client_id')->references('id')->on('clients');
+            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');;
             $table->timestamps();
         });
     }

@@ -21,4 +21,7 @@ class Intervention extends Model
         'reason',
         'commentary'
     ];
+    public function demands() {
+        return $this->belongsTo('App\Demand','id_demand');
+    }
 }

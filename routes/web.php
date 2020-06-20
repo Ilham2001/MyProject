@@ -62,12 +62,14 @@ Route::get('/documents','DocumentController@index');
 /**
  * Demand Routes
  */
-Route::post('/demands','DemandController@store');
+Route::post('/demands','DemandController@store')->name('add_demand');
 Route::get('/home', 'HomeController@index')->name('home');
 
 /**
  * Intervention Routes
  */
 
- Route::get('/buildings','BuildingClientController@index');
- Route::get('/clients','UserController@index');
+ //Route::get('/buildings','BuildingClientController@index');
+ Route::get('/detail',function() {
+	 return view('onglets.interventionDetail');
+ });

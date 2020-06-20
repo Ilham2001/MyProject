@@ -45,11 +45,24 @@
                         <div class="input-group">
                             <label for="buildingRef" class="form-control-label">Référence immeuble :</label>
                             <span class="input-group-btn" style="width:15px;"></span>
-                            <div class="col-xs-3"><input type="text" class="form-control form-control-sm mb-4" name ="buildingRef"></div>
+                            <div class="col-xs-3">
+                            
+                                <select class="form-control form-control-sm mb-4" name ="buildingRef">
+                                    @foreach($clients->buildings as $building) 
+                                        <option value="{{ $building->id }}">{{ $building->buildingRef }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <span class="input-group-btn" style="width:50px;"></span>
                             <label for="adress_building" class="form-control-label">Adresse immeuble :</label>
                             <span class="input-group-btn" style="width:15px;"></span>
-                            <div class="col-xs-3"><input type="text" class="form-control form-control-sm mb-4" name="adress_building"></div>
+                            <div class="col-xs-3">
+                                <select type="text" class="form-control form-control-sm mb-4" name="adress_building">
+                                    @foreach($clients->buildings as $building) 
+                                        <option value="{{ $building->adress }}">{{ $building->adress }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
                         
                         <div class="form-group">
@@ -84,7 +97,11 @@
                             </div>
                                 <!-- Quote form-->
                                 <div class="quote-form" id="quote">
-                                    
+                                    <div class="input-group">
+                                        <label for="title_quote" class="form-control-label">Titre du devis :</label>
+                                        <span class="input-group-btn" style="width:15px;"></span>
+                                        <div class="col-xs-3"><input type="text" class="form-control form-control-sm mb-4" name="title_quote"></div>
+                                    </div>
                                 </div>
                                 <!-- Email form-->
                                 <div class="email-form" id="email">
@@ -100,10 +117,11 @@
                                     <label for="content_demand">Contenu de votre demande :</label>
                                     <textarea class="form-control" rows="5" id="content_demand" name="content"></textarea>
                                 </div> 
+                                <button type="submit" class="btn btn-primary">Valider</button>
                 </div>
                 <div class="modal-footer">
                     <button type="button" data-dismiss="modal" class="btn btn-dark mr-auto closemodal">Annuler</button>
-                    <button type="submit" class="btn btn-primary">Valider</button>
+                    
                 </div>
                 </form>
             </div>
@@ -123,13 +141,14 @@
             <tr>
                 <td>{{ $demand->date_demand }}</td>
                 <td>{{ $demand->type_demand }}</td>
-                <td style="width:45%;">{{ $demand->content_demand }}</td>
-                <td><a href="">Vois plus de détails</a></td>   
+                <td>{{ $demand->content_demand }}</td>
+                <td>Vois plus de détails</td>   
             </tr>
             @endforeach
         </tbody>
     </table>
 </div>
+
 @endsection
 
 <!-- JS -->

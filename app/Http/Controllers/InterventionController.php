@@ -47,9 +47,16 @@ class InterventionController extends Controller
      * @param  \App\Intervention  $intervention
      * @return \Illuminate\Http\Response
      */
-    public function show(Intervention $intervention)
+    public function show($id)
     {
-        //
+        $intervention = Intervention::find($id);
+        $building = $intervention->building;
+        $demand = $intervention->demand;
+        //dd($building);
+        return view('onglets.interventionDetail')
+            ->with('intervention',$intervention)
+            ->with('demand',$demand)
+            ->with('building',$building);
     }
 
     /**

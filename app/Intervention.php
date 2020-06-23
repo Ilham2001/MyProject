@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Intervention extends Model
 {
     protected $fillable = [
-        'id_intervnention',
+        'id',
         'id_building',
         'id_demand',
         'interventionRef',
@@ -21,7 +21,12 @@ class Intervention extends Model
         'reason',
         'commentary'
     ];
-    public function demands() {
-        return $this->belongsTo('App\Demand','id_demand');
+    
+    public function building() {
+        return $this->belongsTo('App\Building','id');
+    }
+    public function demand()
+    {
+        return $this->belongsTo('App\Demand','id');
     }
 }

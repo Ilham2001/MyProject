@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddDateToInterventionsTable extends Migration
+class UpdateBuildingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddDateToInterventionsTable extends Migration
      */
     public function up()
     {
-        Schema::table('interventions', function (Blueprint $table) {
-            $table->date('date_intervention');
+        Schema::table('buildings', function (Blueprint $table) {
+            //
         });
     }
 
@@ -25,8 +25,8 @@ class AddDateToInterventionsTable extends Migration
      */
     public function down()
     {
-        Schema::table('interventions', function (Blueprint $table) {
-            Schema::dropIfExists('date_intervention');
+        Schema::table('buildings', function (Blueprint $table) {
+            //
         });
     }
 }

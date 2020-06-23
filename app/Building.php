@@ -19,4 +19,9 @@ class Building extends Model
     {
         return $this->belongsToMany('App\Client');
     }
+    
+    public function interventions()
+    {
+        return $this->hasMany('App\Intervention','id');
+    }
 }

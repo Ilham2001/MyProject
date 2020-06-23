@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Quote;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class QuoteController extends Controller
 {
@@ -14,7 +15,8 @@ class QuoteController extends Controller
      */
     public function index()
     {
-        return view('onglets.quotes');
+        $quotes = DB::table('quotes')->get();
+        return view('onglets.quotes',compact('quotes'));
     }
 
     /**

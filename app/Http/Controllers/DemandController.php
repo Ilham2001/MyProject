@@ -30,10 +30,7 @@ class DemandController extends Controller
         $client_id = $user->clients->id;
 
         $clients = Client::find($client_id);
-
-        /*foreach($clients->buildings as $building) {
-            echo $building->buildingName;
-        }*/
+        
         return view('onglets/demands')->with('demands',$demands)->with('clients',$clients);
     }
 
@@ -101,19 +98,7 @@ class DemandController extends Controller
      * @param  \App\Demand  $demand
      * @return \Illuminate\Http\Response
      */
-    public function show(Demand $demand)
-    {
-        //
-    }
-
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Demand  $demand
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Demand $demand)
+    public function show($id)
     {
         //
     }

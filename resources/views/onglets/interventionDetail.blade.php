@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    .table {
+        padding : 20px;
+        margin : 10px;
+    }
+</style>
     <h3>Détail intervention</h3>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -25,66 +31,82 @@
                                 <tbody>
                                     <tr>
                                         <th>Référence de l'immeuble</th>
-                                            <td>1</td>
-                                            <td>2</td>
-                                    </tr>
+                                            <td>{{ $building->buildingRef }}</td>
+                                        </tr>
                                     <tr>
                                         <th>Adresse</th>
-                                            <td>John</td>
-                                            <td>Peter</td>
+                                            <td>{{ $building->adress }}</td>
                                         </tr>
                                     <tr>
                                         <th>Code postal</th>
-                                            <td>Carter</td>
-                                            <td>Parker</td>
-                                        </tr>
+                                            <td>{{ $building->zipcode }}</td>
+                                    </tr>
                                     <tr>
                                     <tr>
                                         <th>Ville</th>
-                                            <td>Oujda</td>
-                                            <td>Paris</td>
+                                            <td>{{ $building->city }}</td>
                                         </tr>
                                     <tr>
                                 </tbody>
                             </table>
                         </div>
                         <div class="tab-pane fade" id="nav-demand" role="tabpanel" aria-labelledby="nav-demand-tab">
-                        <table class="table">
-                            <tbody>
-                                <tr>
-                                    <th>Motif</th>
-                                        <td>contenu demande</td>
+                        <!--<table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th>Contenu de la demande</th>
+                                            <td></td>
+                                        </tr>
+                                    <tr>
+                                        <th>Correspondant</th>
+                                            <td></td>
+                                        </tr>
+                                    <tr>
+                                        <th>Date</th>
+                                            <td></td>
                                     </tr>
-                                <tr>
-                                    <th>Correspondant</th>
-                                        <td>LAZAR Ilham</tdS
-                                </tr>
-                                <tr>
-                                    <th>Date</th>
-                                        <td>00</td>
-                                    </tr>
-                                <tr>
+                                    <tr>
                                     <tr>
                                         <th>Origine</th>
-                                            <td>tel</td>
+                                            <td></td>
                                         </tr>
-                                <tr>
+                                    <tr>
+                                </tbody>
+                            </table>-->
+                        </div>
+                        <div class="tab-pane fade" id="nav-report" role="tabpanel" aria-labelledby="nav-report-tab">
+                        <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th>Statut de l'intervention</th>
+                                            <td>{{ $intervention->status_intervention}}</td>
+                                        </tr>
+                                    <tr>
+                                        <th>Intervenant</th>
+                                            <td></td>
+                                        </tr>
+                                    <tr>
+                                        <th>Effectuée le</th>
+                                            <td>{{ $intervention->date_intervention }}</td>
+                                    </tr>
+                                    <tr>
+                                    <tr>
+                                        <th>Heure début</th>
+                                            <td>{{ $intervention->startTime }}</td>
+                                        </tr>
+                                    <tr>
+                                    <tr>
+                                        <th>Heure fin</th>
+                                            <td>{{ $intervention->endTime }}</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
-                        <div class="tab-pane fade" id="nav-report" role="tabpanel" aria-labelledby="nav-report-tab">
-                            status
-                            intervenant
-                            effectué le 
-                            heure début 
-                            heure fin
-                            @yield('report')
-                        </div>
                         <div class="tab-pane fade" id="nav-quote" role="tabpanel" aria-labelledby="nav-quote-tab">
-                           @include('onglets.content')
+                            4
                         </div>
                         <div class="tab-pane fade" id="nav-document" role="tabpanel" aria-labelledby="nav-document-tab">
-                            
+                            5
                         </div>
                     </div>
                 </div>

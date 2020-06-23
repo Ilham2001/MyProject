@@ -142,7 +142,7 @@
                 <td>{{ $demand->date_demand }}</td>
                 <td>{{ $demand->type_demand }}</td>
                 <td>{{ $demand->content_demand }}</td>
-                <td>Vois plus de détails</td>   
+                <td> <a href="{{ URL::to('demands/' . $demand->id) }}"> Voir plus de détails </a> </td>   
             </tr>
             @endforeach
         </tbody>

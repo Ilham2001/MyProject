@@ -18,4 +18,8 @@ class Quote extends Model
         'status_quote',
         'location_quote'
     ];
+    public function demand()
+    {
+        return $this->belongsTo('App\Demand','id');
+    }
 }

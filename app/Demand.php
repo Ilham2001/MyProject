@@ -7,14 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 class Demand extends Model
 {
     protected $fillable = [
-        'id_demand',
+        'id_intervention',
         'date_demand',
         'type_demand',
         'content_demand'
     ];
 
-    public function intervention()
+    public function interventions()
     {
-        return $this->hasMany('App\Intervention','id_intervention');
+        return $this->hasMany('App\Intervention','id');
+    }
+    public function quotes()
+    {
+        return $this->hasMany('App\Quote','id');
     }
 }

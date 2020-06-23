@@ -68,8 +68,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 /**
  * Intervention Routes
  */
-
- //Route::get('/buildings','BuildingClientController@index');
- Route::get('/detail',function() {
-	 return view('onglets.interventionDetail');
- });
+ Route::get('/interventions/{id}', 'InterventionController@show');

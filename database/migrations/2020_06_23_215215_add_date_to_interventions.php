@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddLocationToInterventionsTable extends Migration
+class AddDateToInterventions extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddLocationToInterventionsTable extends Migration
     public function up()
     {
         Schema::table('interventions', function (Blueprint $table) {
-            $table->string('location_intervention');
+            $table->date('date_intervention');
         });
     }
 
@@ -26,7 +26,7 @@ class AddLocationToInterventionsTable extends Migration
     public function down()
     {
         Schema::table('interventions', function (Blueprint $table) {
-            Schema::dropIfExists('location_intervention');
+            //
         });
     }
 }

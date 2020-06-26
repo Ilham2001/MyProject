@@ -6,10 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Intervention extends Model
 {
+    public $table = "interventions";
     protected $fillable = [
         'id',
-        'id_building',
-        'id_demand',
         'interventionRef',
         'type_intervention',
         'startDate',
@@ -19,14 +18,39 @@ class Intervention extends Model
         'endTime',
         'status_intervention',
         'reason',
-        'commentary'
+        'commentary',
+        'id_building',
+        'id_demand',
+        'date_intervention',
+        'breakdown',
+        'solution',
+        'replaced_hardware'
     ];
-    
+    /**
+     * Intervention belongs to just one building
+     */
     public function building() {
         return $this->belongsTo('App\Building','id');
     }
+    /**
+     * Intervention belong to just one demand
+     */
     public function demand()
     {
         return $this->belongsTo('App\Demand','id');
+    }
+    /**
+     * Intervention has many staffs->technicians
+     */
+    public function staffs()
+    {
+        return $this->hasMany('App\Staff','id');
+    }
+    /**
+     * Intervention has one call record
+     */
+    public function call_record()
+    {
+        return $this->hasOne('App\CallRecord','id');
     }
 }

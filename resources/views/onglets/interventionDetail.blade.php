@@ -51,28 +51,32 @@
                             </table>
                         </div>
                         <div class="tab-pane fade" id="nav-demand" role="tabpanel" aria-labelledby="nav-demand-tab">
-                        <!--<table class="table">
+                        <table class="table">
                                 <tbody>
                                     <tr>
                                         <th>Contenu de la demande</th>
-                                            <td></td>
+                                            <td>{{ $demand->content_demand }}</td>
                                         </tr>
                                     <tr>
                                         <th>Correspondant</th>
-                                            <td></td>
+                                            <td>
+                                                @foreach($intervention->staffs as $staff)
+                                                    {{ $staff->corresponding }}
+                                                @endforeach
+                                            </td>
                                         </tr>
                                     <tr>
                                         <th>Date</th>
-                                            <td></td>
+                                            <td>{{ $demand->date_demand }}</td>
                                     </tr>
                                     <tr>
                                     <tr>
                                         <th>Origine</th>
-                                            <td></td>
+                                            <td>{{ $intervention->call_record->origin }}</td>
                                         </tr>
                                     <tr>
                                 </tbody>
-                            </table>-->
+                            </table>
                         </div>
                         <div class="tab-pane fade" id="nav-report" role="tabpanel" aria-labelledby="nav-report-tab">
                         <table class="table">
@@ -83,7 +87,11 @@
                                         </tr>
                                     <tr>
                                         <th>Intervenant</th>
-                                            <td></td>
+                                            <td>
+                                                @foreach($intervention->staffs as $staff)
+                                                    {{ $staff->delostal_technician }}
+                                                @endforeach
+                                            </td>
                                         </tr>
                                     <tr>
                                         <th>Effectuée le</th>
@@ -98,6 +106,22 @@
                                     <tr>
                                         <th>Heure fin</th>
                                             <td>{{ $intervention->endTime }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Panne constatée</th>
+                                            <td>{{ $intervention->breakdown }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Solution apportée</th>
+                                            <td>{{ $intervention->solution }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Matériel remplacé</th>
+                                            <td>{{ $intervention->replaced_hardware }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Commentaire</th>
+                                            <td>{{ $intervention->commentary }}</td>
                                     </tr>
                                 </tbody>
                             </table>

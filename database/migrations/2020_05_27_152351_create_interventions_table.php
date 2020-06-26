@@ -14,11 +14,11 @@ class CreateInterventionsTable extends Migration
     public function up()
     {
         Schema::create('interventions', function (Blueprint $table) {
-            $table->increments('id_intervention');
-            $table->integer('id_building')->unsigned();
-            $table->foreign('id_building')->references('id_building')->on('buildings')->onDelete('cascade');;
-            $table->integer('id_demand')->unsigned();
-            $table->foreign('id_demand')->references('id_demand')->on('demands')->onDelete('cascade');;
+            $table->id();
+            /*$table->unsignedBigInteger('id_building');
+            $table->foreign('id_building')->references('id')->on('buildings')->onDelete('cascade');
+            $table->unsignedBigInteger('id_demand');
+            $table->foreign('id_demand')->references('id')->on('demands')->onDelete('cascade');*/
             $table->string('interventionRef');
             $table->string('type_intervention');
             $table->date('startDate');

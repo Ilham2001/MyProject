@@ -48,7 +48,8 @@
                     <td>{{ $intervention->date_intervention }}</td>
                     <td>{{ $intervention->id }}</td>
                     <td>type de l'intervention</td>
-                    <td>{{ $intervention->location_intervention }}</td>
+                    
+                    <td></td>
                     <td>{{ $intervention->reason }}</td>
                     <td>{{ $intervention->status_intervention }}</td>
                     <td><a href="{{ URL::to('interventions/' . $intervention->id) }}">Voir plus de détails</a></td>   

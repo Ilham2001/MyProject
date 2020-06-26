@@ -69,3 +69,4 @@ Route::get('/home', 'HomeController@index')->name('home');
  * Intervention Routes
  */
  Route::get('/interventions/{id}', 'InterventionController@show');
+ Route::get('/staffs','StaffController@index');

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Intervention;
+use App\Building;
+use App\Staff;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,29 +18,27 @@ class InterventionController extends Controller
      */
     public function index()
     {
+        //$interventions = array();
         $interventions = DB::table('interventions')->get();
-        return view('onglets/interventions',compact('interventions'));
-    }
+    
+        foreach($interventions as $inter) {
+            return $inter->building->adress;
+        }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        $result = array();
+        foreach ($interventions as $intervention) {
+            $data = [
+                'intervention' => $intervention,
+                'adress' => $intervention->building->adress
+            ];
+            array_push($result,$data);
+        }
+        
+        dd($result);
+        
+
+        //return view('onglets/interventions',compact('interventions'));
     }
 
     /**
@@ -47,49 +47,19 @@ class InterventionController extends Controller
      * @param  \App\Intervention  $intervention
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Intervention $intervention)
     {
-        $intervention = Intervention::find($id);
-        $building = $intervention->building;
+        $intervention = Intervention::find($intervention->id);
         $demand = $intervention->demand;
-        //dd($building);
+        $building = $intervention->building;
+        $staffs = $intervention->staffs;
+        $call_record = $intervention->call_record;
+
         return view('onglets.interventionDetail')
             ->with('intervention',$intervention)
             ->with('demand',$demand)
-            ->with('building',$building);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Intervention  $intervention
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Intervention $intervention)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Intervention  $intervention
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Intervention $intervention)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Intervention  $intervention
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Intervention $intervention)
-    {
-        //
+            ->with('building',$building)
+            ->with('staffs',$staffs)
+            ->with('call_record',$call_record);
     }
 }

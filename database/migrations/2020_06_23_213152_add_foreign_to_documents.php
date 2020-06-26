@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddIdClientToUsersTable extends Migration
+class AddForeignToDocuments extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class AddIdClientToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->unsignedInteger('client_id');
-            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
+        Schema::table('documents', function (Blueprint $table) {
+            $table->unsignedBigInteger('id_building');
+            $table->foreign('id_building')->references('id')->on('buildings')->onDelete('cascade');
         });
     }
 
@@ -26,8 +26,8 @@ class AddIdClientToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            Schema::dropIfExists('client_id');
+        Schema::table('documents', function (Blueprint $table) {
+            //
         });
     }
 }

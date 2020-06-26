@@ -13,18 +13,14 @@
                     <div class="col-xs-3"><input type="date" class="form-control form-control-sm mb-4" name=""></div>
                 </div>
                 <div class="input-group">
-                    <label for="" class="form-control-label">N° devis :</label>
-                    <span class="input-group-btn" style="width:15px;"></span>
-                    <div class="col-xs-3"><input type="text" class="form-control form-control-sm mb-4" name =""></div>
                     <span class="input-group-btn" style="width:50px;"></span>
-                    <label for="adress_building" class="form-control-label">Statut :</label>
+                    <label for="adress_building" class="form-control-label">Nature :</label>
                     <span class="input-group-btn" style="width:15px;"></span>
                     <div class="col-xs-3">
-                        <select class="form-control form-control-sm mb-4" name="status_quote"> 
-                            <option value="Accepté">Accepté</option>
-                            <option value="Facturé">Facturé</option>
-                            <option value="Refusé">Refusé</option>
-                            <option value="En cours d'acceptation">En cours d'acceptation</option>            
+                        <select class="form-control form-control-sm mb-4" name="status_document"> 
+                            <option value="Fax">Fax</option>
+                            <option value="Correspondance">Correspondance</option>
+                            <option value="Contrat">Contrat</option>
                         </select>
                     </div>
                 </div>
@@ -42,16 +38,14 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($quotes as $quote)
+                @foreach($documents as $document)
                 <tr>
-                    <td>{{ $quote->date_quote }}</td>
-                    <td>{{ $quote->id_quote }}</td>
-                    <td>{{ $quote->title_quote }}</td>
-                    <td>{{ $quote->location_quote }}</td>
-                    <td>{{ $quote->amountHT }}</td>
-                    <td>{{ $quote->amountTTC }}</td>
-                    <td>{{ $quote->status_quote }}</td>
-                    <td><a href="">Voir plus de détails</a></td>   
+                    <td>{{ $document->creationDate }}</td>
+                    <td>{{ $document->id_document }}</td>
+                    <td>{{ $document->title_document }}</td>
+                    <td>{{ $document->location_document }}</td>
+                    <td>{{ $document->type_document }}</td>
+                    <td><a href="">Télécharger</a></td>   
                 </tr>
                 @endforeach
             </tbody>

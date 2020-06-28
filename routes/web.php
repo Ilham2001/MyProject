@@ -64,6 +64,7 @@ Route::get('/documents','DocumentController@index');
  */
 Route::post('/demands','DemandController@store')->name('add_demand');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/demands/{id}','DemandController@show');
 
 /**
  * Intervention Routes

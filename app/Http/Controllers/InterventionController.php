@@ -21,24 +21,16 @@ class InterventionController extends Controller
         //$interventions = array();
         $interventions = DB::table('interventions')->get();
     
-        foreach($interventions as $inter) {
-            return $inter->building->adress;
-        }
+        /*foreach($interventions as $inter) {
+            //$id = $inter->id_building;
+            var_dump($inter);
+        }*/
 
 
-        $result = array();
-        foreach ($interventions as $intervention) {
-            $data = [
-                'intervention' => $intervention,
-                'adress' => $intervention->building->adress
-            ];
-            array_push($result,$data);
-        }
         
-        dd($result);
         
 
-        //return view('onglets/interventions',compact('interventions'));
+        return view('onglets/interventions',compact('interventions'));
     }
 
     /**
@@ -49,17 +41,18 @@ class InterventionController extends Controller
      */
     public function show(Intervention $intervention)
     {
-        $intervention = Intervention::find($intervention->id);
-        $demand = $intervention->demand;
-        $building = $intervention->building;
-        $staffs = $intervention->staffs;
-        $call_record = $intervention->call_record;
+        $inter = Intervention::find($intervention->id);
+        $demand = $inter->demand;
+        $building = $inter->building;
+        $staffs = $inter->staffs;
+        $call_record = $inter->call_record;
+       //dd($intervention->call_record);
 
         return view('onglets.interventionDetail')
-            ->with('intervention',$intervention)
+            ->with('intervention',$inter)
             ->with('demand',$demand)
             ->with('building',$building)
-            ->with('staffs',$staffs)
-            ->with('call_record',$call_record);
+            ->with('staffs',$staffs);
+            //->with('call_record',$call_record);
     }
 }

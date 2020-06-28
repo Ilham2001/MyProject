@@ -41,7 +41,7 @@
                 @foreach($documents as $document)
                 <tr>
                     <td>{{ $document->creationDate }}</td>
-                    <td>{{ $document->id_document }}</td>
+                    <td>{{ $document->id }}</td>
                     <td>{{ $document->title_document }}</td>
                     <td>{{ $document->location_document }}</td>
                     <td>{{ $document->type_document }}</td>

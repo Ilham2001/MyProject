@@ -96,6 +96,7 @@
                 <div class="outer-container">
                     @yield('content')
                 </div>
+                @stack('scripts')
             </div>
             
         </main>

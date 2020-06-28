@@ -30,14 +30,14 @@ class Intervention extends Model
      * Intervention belongs to just one building
      */
     public function building() {
-        return $this->belongsTo('App\Building','id');
+        return $this->belongsTo('App\Building','id_building','id');
     }
     /**
      * Intervention belong to just one demand
      */
     public function demand()
     {
-        return $this->belongsTo('App\Demand','id');
+        return $this->belongsTo('App\Demand','id_demand','id');
     }
     /**
      * Intervention has many staffs->technicians

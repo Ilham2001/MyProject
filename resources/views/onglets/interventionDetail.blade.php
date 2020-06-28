@@ -72,7 +72,7 @@
                                     <tr>
                                     <tr>
                                         <th>Origine</th>
-                                            <td>{{ $intervention->call_record->origin }}</td>
+                                            <td>ORIGINE</td>
                                         </tr>
                                     <tr>
                                 </tbody>

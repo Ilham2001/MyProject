@@ -47,7 +47,7 @@
                 @foreach($quotes as $quote)
                 <tr>
                     <td>{{ $quote->date_quote }}</td>
-                    <td>{{ $quote->id_quote }}</td>
+                    <td>{{ $quote->id }}</td>
                     <td>{{ $quote->title_quote }}</td>
                     <td>{{ $quote->location_quote }}</td>
                     <td>{{ $quote->amountHT }}</td>

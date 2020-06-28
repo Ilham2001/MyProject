@@ -14,9 +14,6 @@
         <li class="nav-item">
             <a class="nav-link" href="{{URL::to('/documents') }}">Documents</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Finances</a>
-        </li>
     </ul>
     @yield('menu-content')
 @endsection

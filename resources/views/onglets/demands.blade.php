@@ -22,7 +22,7 @@
 
 @section('menu-content')
 <div class="container">
-    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#infos" class="btn btn-secondary">Nouvelle demande</button>
+    <button id ="new-demand" class="btn btn-primary" type="button" data-toggle="modal" data-target="#infos" class="btn btn-primary mt-3 mb-3">Nouvelle demande</button>
     <div class="modal fade" id="infos">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -141,7 +141,7 @@
             <tr>
                 <td>{{ $demand->date_demand }}</td>
                 <td>{{ $demand->type_demand }}</td>
-                <td>{{ $demand->content_demand }}</td>
+                <td>{{ substr($demand->content_demand,0,40) }}</td>
                 <td> <a href="{{ URL::to('demands/' . $demand->id) }}"> Voir plus de détails </a> </td>   
             </tr>
             @endforeach
@@ -150,6 +150,7 @@
 </div>
 
 @endsection
+
 
 <!-- JS -->
 <script type="text/javascript">

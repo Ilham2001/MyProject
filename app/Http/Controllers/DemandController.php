@@ -98,8 +98,9 @@ class DemandController extends Controller
      * @param  \App\Demand  $demand
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Demand $demand)
     {
-        //
+        $demande = Demand::find($demand->id);
+        return view('onglets.demandDetail',compact('demande'));
     }
 }

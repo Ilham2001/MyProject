@@ -1,8 +1,14 @@
 @extends('dashboard')
 
+<style>
+    .search-box {
+        width : 510px;
+        margin : 20px auto;
+    }
+</style>
 @section('menu-content')
     <div class="container">
-        <div class="">
+        <div class="search-box">
             <form action="">
                 <div class="input-group">
                     <label for="" class="form-control-label">Du :</label>
@@ -49,7 +55,7 @@
                     <td>{{ $intervention->id }}</td>
                     <td>type de l'intervention</td>
                     
-                    <td></td>
+                    <td>{{ $intervention->location_intervention }}</td>
                     <td>{{ $intervention->reason }}</td>
                     <td>{{ $intervention->status_intervention }}</td>
                     <td><a href="{{ URL::to('interventions/' . $intervention->id) }}">Voir plus de détails</a></td>   

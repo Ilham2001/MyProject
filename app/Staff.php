@@ -15,6 +15,6 @@ class Staff extends Model
     ];
     public function intervention()
     {
-        return $this->belongsTo('App\Intervention','id');
+        return $this->belongsTo('App\Intervention','id_intervention','id');
     }
 }

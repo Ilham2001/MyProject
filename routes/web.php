@@ -64,10 +64,27 @@ Route::get('/documents','DocumentController@index');
  */
 Route::post('/demands','DemandController@store')->name('add_demand');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/demands/{id}','DemandController@show');
 
 /**
  * Intervention Routes
  */
  Route::get('/interventions/{id}', 'InterventionController@show');
  Route::get('/staffs','StaffController@index');
+ Route::get('/searchInter','InterventionController@searchInter');
+ 
+ 
+ 
+ /**
+  * Quote Routes
+  */
+Route::get('/searchQuote','QuoteController@searchQuote');
+
+/**
+ * Document Routes
+ */
+Route::get('/searchDoc ','DocumentController@searchDoc');
+
+ /**
+  * Mail Routes
+  */
+Route::get('/email','DemandController@store');

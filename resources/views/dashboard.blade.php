@@ -15,5 +15,6 @@
             <a class="nav-link" href="{{URL::to('/documents') }}">Documents</a>
         </li>
     </ul>
+
     @yield('menu-content')
 @endsection

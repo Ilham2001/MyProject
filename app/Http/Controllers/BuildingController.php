@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Building;
 use App\Client;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class BuildingController extends Controller
 {
@@ -16,71 +19,13 @@ class BuildingController extends Controller
     public function index()
     {
         $client = Client::find(1);	
-        dd($client->buildings);
+        
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Building's demands
      */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Building  $building
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Building $building)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Building  $building
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Building $building)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Building  $building
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Building $building)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Building  $building
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Building $building)
+    public function show($id)
     {
         //
     }

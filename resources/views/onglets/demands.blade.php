@@ -141,8 +141,8 @@
             <tr>
                 <td>{{ $demand->date_demand }}</td>
                 <td>{{ $demand->type_demand }}</td>
-                <td>{{ substr($demand->content_demand,0,40) }}</td>
-                <td> <a href="{{ URL::to('demands/' . $demand->id) }}"> Voir plus de détails </a> </td>   
+                <td>{{ substr($demand->content_demand,0,40) }}...</td>
+                <td class="cell-center"> <a href="{{ URL::to('demands/' . $demand->id) }}"> <i class="fas fa-eye"></i> </a> </td>   
             </tr>
             @endforeach
         </tbody>
@@ -150,8 +150,6 @@
 </div>
 
 @endsection
-
-
 <!-- JS -->
 <script type="text/javascript">
 		function show1(){
@@ -170,4 +168,5 @@
             document.getElementById('email').style.display = 'block';
 		}
 	</script>
+
     

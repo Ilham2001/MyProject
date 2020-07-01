@@ -582,7 +582,7 @@ pre code {
 
 @media (min-width: 576px) {
   .container {
-    max-width: 540px;
+    max-width: 100px;
   }
 }
 
@@ -4551,6 +4551,7 @@ input[type=button].btn-block {
 
 .navbar-brand {
   display: inline-block;
+  padding : 20px;
   padding-top: 0.32rem;
   padding-bottom: 0.32rem;
   margin-right: 1rem;
@@ -4967,6 +4968,7 @@ input[type=button].btn-block {
 }
 
 .card {
+  margin-right:30px ;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -10945,9 +10947,9 @@ a.text-dark:focus {
         top: 0;
         left: 0;
         bottom: 0;
-        background-color: rgba(30,144,255,0.7);
+        background-color: rgb(0, 51, 102);
         padding-top: 50px;
-        margin-top : 55px;
+        margin-top : 100px;
     }
 
     .sidebar h1 {
@@ -10977,3 +10979,6 @@ a.text-dark:focus {
     #search-box {
         margin : 0 auto;
     }
+    .cell-center {
+      text-align: center;
+  }

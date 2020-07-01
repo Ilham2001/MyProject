@@ -24,8 +24,16 @@ class DocumentController extends Controller
      * @param  \App\Document  $document
      * @return \Illuminate\Http\Response
      */
-    public function show(Document $document)
+    public function searchDoc(Request $request)
     {
-        //
+        $from = request('startDate');
+        $to = request('endDate');
+        $doc_nature = request('documentNature');
+        $documents = DB::table('documents')
+            ->where('documentNature',$doc_nature)
+            ->orWhereBetween('creationDate', [$from, $to])
+            ->get();
+        //dd($documents);
+        return view('onglets.documents',['documents' => $documents]);
     }
 }

@@ -36,4 +36,10 @@ class Building extends Model
     {
         return $this->hasMany('App\Document','id');
     }
+    /**
+     * Building has many demands
+     */
+    public function demands() {
+        return $this->hasMany('App\Demand','id');
+    }
 }

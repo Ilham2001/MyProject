@@ -20,23 +20,31 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <style>
+        img.logo {
+           height : 25%;
+           width : 30%;
+        }
+    </style>
+    @livewireStyles
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+            @if(Route::has('home'))
+                <a class="navbar-brand" href="{{ url('/home') }}">
+                    <img class="logo" src="DT groupe.jpg" style="height : 20%; width : 25%;" >
+                   
                 </a>
+            @endif
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
+                    
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -79,27 +87,17 @@
             <!-- SIDEBAR -->
             @auth
                 <div class="sidebar">
-                    <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
-                        <i class="fas fa-search" aria-hidden="true"></i>
-                        <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
-                    </form>
-                    <ul class="nav navbar">
-                    
-                        @foreach($clients->buildings as $building)
-                            <li class="nav-item">{{ $building->buildingName }}</li>
-                        @endforeach
-                    
-                    </ul>
+                    @livewire('live-search')
                 </div> 
             @endauth
                 <!-- OUTER CONTAINER -->
                 <div class="outer-container">
                     @yield('content')
                 </div>
-                @stack('scripts')
             </div>
             
         </main>
     </div>
+    @livewireScripts 
 </body>
 </html>

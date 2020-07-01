@@ -21,8 +21,6 @@
                             <a class="nav-item nav-link active" id="nav-building-tab" data-toggle="tab" href="#nav-building" role="tab" aria-controls="nav-building" aria-selected="true">Référence immeuble</a>
                             <a class="nav-item nav-link" id="nav-demand-tab" data-toggle="tab" href="#nav-demand" role="tab" aria-controls="nav-demand" aria-selected="false">Votre demande</a>
                             <a class="nav-item nav-link" id="nav-report-tab" data-toggle="tab" href="#nav-report" role="tab" aria-controls="nav-report" aria-selected="false">Compte rendu</a>
-                            <a class="nav-item nav-link" id="nav-quote-tab" data-toggle="tab" href="#nav-quote" role="tab" aria-controls="nav-quote" aria-selected="false">Devis</a>
-                            <a class="nav-item nav-link" id="nav-document-tab" data-toggle="tab" href="#nav-document" role="tab" aria-controls="nav-document" aria-selected="false">Document</a>
                         </div>
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
@@ -125,12 +123,6 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
-                        <div class="tab-pane fade" id="nav-quote" role="tabpanel" aria-labelledby="nav-quote-tab">
-                            4
-                        </div>
-                        <div class="tab-pane fade" id="nav-document" role="tabpanel" aria-labelledby="nav-document-tab">
-                            5
                         </div>
                     </div>
                 </div>

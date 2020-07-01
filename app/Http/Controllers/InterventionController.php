@@ -18,18 +18,8 @@ class InterventionController extends Controller
      */
     public function index()
     {
-        //$interventions = array();
         $interventions = DB::table('interventions')->get();
-    
-        /*foreach($interventions as $inter) {
-            //$id = $inter->id_building;
-            var_dump($inter);
-        }*/
-
-
-        
-        
-
+        //dd($interventions);
         return view('onglets/interventions',compact('interventions'));
     }
 
@@ -54,5 +44,20 @@ class InterventionController extends Controller
             ->with('building',$building)
             ->with('staffs',$staffs);
             //->with('call_record',$call_record);
+    }
+    public function searchInter(Request $request)
+    {
+        $from = request('startDate');
+        $to = request('endDate');
+        $id_inter = request('id_intervention');
+        $status_intervention = request('status_intervention');
+        $interventions = DB::table('interventions')
+            ->where('id',$id_inter)
+            ->orWhere('status_intervention',$status_intervention)
+            ->orWhereBetween('date_intervention', [$from, $to])
+            ->get();
+        //dd($interventions);
+        return view('onglets.interventions', ['interventions' => $interventions]);
+        
     }
 }

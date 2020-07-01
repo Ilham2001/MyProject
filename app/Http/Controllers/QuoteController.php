@@ -25,8 +25,18 @@ class QuoteController extends Controller
      * @param  \App\Quote  $quote
      * @return \Illuminate\Http\Response
      */
-    public function show(Quote $quote)
+    public function searchQuote(Request $request)
     {
-        //
+        $from = request('startDate');
+        $to = request('endDate');
+        $id_quote = request('id_quote');
+        $status_quote = request('status_quote');
+        $quotes = DB::table('quotes')
+            ->where('id',$id_quote)
+            ->orWhere('status_quote',$status_quote)
+            ->orWhereBetween('date_quote', [$from, $to])
+            ->get();
+        //dd($quotes);
+        return view('onglets.quotes', ['quotes' => $quotes]);
     }
 }

@@ -1,14 +1,12 @@
 @extends('layouts.app')
 <style>
     .icons {
-        font-size : 100px;
+        font-size : 60px;
+        color : rgb(0, 51, 102);
     }
-
-
 </style>
-<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+
 @section('content')
-    @include('layouts.headers.cards')
     <ul class="nav navbar bg-light">
         <li class="nav-item">
             <a class="nav-link" href="{{URL::to('/demands') }}">Demandes</a>
@@ -26,7 +24,7 @@
 
     <center>
         <div class="container">
-            <div class="row">
+            <div class="row mt-5">
                 <div class="col">
                     <i class="fas fa-wrench icons"></i>
                     <label>Intervention</label>
@@ -35,25 +33,20 @@
                 <div class="col">
                     <i class="fas fa-euro-sign icons"></i>
                     <label>Devis</label>
-                    <p>Liste et détails des interventions réalisées par nos services</p>
+                    <p>Liste et détails de nos propositions</p>
                 </div>
                 <div class="w-100"></div>
                 <div class="col-lg">
                     <i class="fas fa-envelope icons"></i>
                     <label>Demandes</label>
-                    <p>Liste et détails des interventions réalisées par nos services</p>
+                    <p>Demandes d'interventions et de devis</p>
                 </div>
                 <div class="col-lg">
                     <i class="fas fa-folder-open icons"></i>
                     <label>Documents</label>
-                    <p>Liste et détails des interventions réalisées par nos services</p>
+                    <p>Document contractuels, relevés de compte et courries</p>
                 </div>
             </div>
         </div>
     </center>
-
-        
-        
-    
-    
 @endsection

@@ -49,9 +49,14 @@
                     </select>
                 </div>
             </div>
-            <div class="row" id="search-submit">
-                <input class="btn btn-primary" type="submit" value="Recherche">
-            </div>
+            <div class="row">
+                    <div class="col"></div>
+                    <div class="col-6"></div>
+                    <div class="col"></div>
+                    <div class="col">
+                        <input class="btn btn-primary" type="submit" value="Recherche">
+                    </div>
+                </div>
         </form>
     </div>
     <div class="row justify-content-md-center">
@@ -78,7 +83,7 @@
                     <td>{{ $quote->amountHT }}</td>
                     <td>{{ $quote->amountTTC }}</td>
                     <td>{{ $quote->status_quote }}</td>
-                    <td class="cell-center"><a href=""><i class="fas fa-download"></i></a></td>   
+                    <td class="cell-center"><a href="{{ URL::to('quotes/' . $quote->id) }}"><i class="fas fa-download"></i></a></td>   
                 </tr>
                 @endforeach
             </tbody>

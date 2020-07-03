@@ -7,7 +7,7 @@
         margin : 10px;
     }
 </style>
-    <h3>Détail intervention</h3>
+    <br><h3>Détail intervention</h3><br>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -70,7 +70,7 @@
                                     <tr>
                                     <tr>
                                         <th>Origine</th>
-                                            <td>ORIGINE</td>
+                                            <td>{{ $call_record->origin }}</td>
                                         </tr>
                                     <tr>
                                 </tbody>

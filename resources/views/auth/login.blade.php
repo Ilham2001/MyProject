@@ -1,11 +1,25 @@
 @extends('layouts.app')
+<style>
+    .card-position {
+        margin-left : 180px;
+        margin-top : 50px;
+    }
+    img.logo {
+    height : 15%;
+    width : 30%;
+    padding : 0%;
+    margin : 0%;
+ }
 
+</style>
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-5">
+    <div class="row">
+        <div class="col-md-6 card-position">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header">
+                    <center><img class="logo login" src="DT groupe.jpg"></center>
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

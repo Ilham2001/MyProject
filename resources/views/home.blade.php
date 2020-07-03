@@ -4,6 +4,16 @@
         font-size : 60px;
         color : rgb(0, 51, 102);
     }
+    p.desc {
+        font-size : 15px;
+        font-family : calibri;
+        font-style : italic;
+    }
+
+    .title {
+        font-size : 20px;
+        font-family : calibri;
+    }
 </style>
 
 @section('content')
@@ -27,24 +37,42 @@
             <div class="row mt-5">
                 <div class="col">
                     <i class="fas fa-wrench icons"></i>
-                    <label>Intervention</label>
-                    <p>Liste et détails des interventions réalisées par nos services</p>
+                    <div>
+                        <label class="title">Intervention</label>
+                    </div>
+                    <div>
+                        <p class="desc">Liste et détails des interventions réalisées par nos services</p>
+                    </div>
                 </div>
                 <div class="col">
                     <i class="fas fa-euro-sign icons"></i>
-                    <label>Devis</label>
-                    <p>Liste et détails de nos propositions</p>
+                    <div>
+                        <label class="title">Devis</label>
+                    </div>
+                    <div>
+                        <p class="desc">Liste et détails de nos propositions</p>
+                    </div>
+                    
                 </div>
                 <div class="w-100"></div>
                 <div class="col-lg">
                     <i class="fas fa-envelope icons"></i>
-                    <label>Demandes</label>
-                    <p>Demandes d'interventions et de devis</p>
+                    <div>
+                        <label class="title">Demandes</label>
+                    </div>
+                    <div>
+                        <p class="desc">Demandes d'interventions et de devis</p>
+                    </div>
+                    
                 </div>
                 <div class="col-lg">
                     <i class="fas fa-folder-open icons"></i>
-                    <label>Documents</label>
-                    <p>Document contractuels, relevés de compte et courries</p>
+                    <div>
+                        <label class="title">Documents</label>
+                    </div>
+                    <div>
+                        <p class="desc">Document contractuels, relevés de compte et courries</p>
+                    </div>
                 </div>
             </div>
         </div>

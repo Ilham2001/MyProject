@@ -26,7 +26,7 @@ class DemandController extends Controller
     public function index()
     {   
         $user=Auth::user();
-        
+        //dd($user->clients);
         $demands = DB::table('demands')->get();
 
         $client_id = $user->clients->id;

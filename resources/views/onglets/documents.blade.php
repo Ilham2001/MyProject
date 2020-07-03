@@ -38,10 +38,17 @@
                     </div>
                     
                 </div>
-                <input class="btn btn-primary" type="submit" name="" id="search-submit">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-6"></div>
+                    <div class="col"></div>
+                    <div class="col">
+                        <input class="btn btn-primary" type="submit" value="Recherche">
+                    </div>
+                </div>
             </form>
         </div>
-        <div class="row">
+        <div class="row ">
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -61,7 +68,11 @@
                         <td>{{ $document->title_document }}</td>
                         <td>{{ $document->location_document }}</td>
                         <td>{{ $document->type_document }}</td>
-                        <td class="cell-center"><a href=""><i class="fas fa-download"></i></a></td>   
+                        <td class="cell-center">
+                            <a href="{{ URL::to('documents/' . $document->id) }}">
+                                <i class="fas fa-download"></i>
+                            </a>
+                        </td>   
                     </tr>
                     @endforeach
                 </tbody>

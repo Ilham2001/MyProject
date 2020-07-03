@@ -1,13 +1,7 @@
 @extends('dashboard')
 
 <style>
-    .search-box {
-        padding : 10px;
-        margin-top : 10px;
-        margin-bottom : 0px ;
-    }
-    }
-    #search-submit {
+    #search-button {
         float : right;
     }
 </style>
@@ -48,8 +42,13 @@
                         </select>
                     </div>
                 </div>
-                <div class="row" id="search-submit">
-                    <input class="btn btn-primary" type="submit" value="Recherche">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-6"></div>
+                    <div class="col"></div>
+                    <div class="col">
+                        <input class="btn btn-primary" type="submit" value="Recherche">
+                    </div>
                 </div>
             </form>
         </div>

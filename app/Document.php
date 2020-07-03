@@ -16,6 +16,6 @@ class Document extends Model
     ];
     public function building()
     {
-        //return $this->belongsTo('App\Building','id');
+        return $this->belongsTo('App\Building','id_building','id');
     }
 }

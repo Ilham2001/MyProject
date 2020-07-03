@@ -1,24 +1,4 @@
 @extends('dashboard')
-<style>
-    button {
-        float : right;
-        margin : 40px;
-        padding : 40px;
-    }
-    table {
-        padding : 10px;
-    }
-    .intervention-form {
- 			display: block;
-		}
-	.quote-form {
- 		display: none;
-	}
-    .email-form {
-        display : none;
-    }
-</style>
-
 
 @section('menu-content')
 <div class="container">
@@ -45,7 +25,7 @@
                         <div class="input-group">
                             <label for="buildingRef" class="form-control-label">Référence immeuble :</label>
                             <span class="input-group-btn" style="width:15px;"></span>
-                            <div class="col-xs-3">
+                            <div class="col">
                             
                                 <select class="form-control form-control-sm mb-4" name ="buildingRef">
                                     @foreach($clients->buildings as $building) 
@@ -53,10 +33,10 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <span class="input-group-btn" style="width:50px;"></span>
+                            <span class="input-group-btn" style="width:15px;"></span>
                             <label for="adress_building" class="form-control-label">Adresse immeuble :</label>
                             <span class="input-group-btn" style="width:15px;"></span>
-                            <div class="col-xs-3">
+                            <div class="col">
                                 <select type="text" class="form-control form-control-sm mb-4" name="adress_building">
                                     @foreach($clients->buildings as $building) 
                                         <option value="{{ $building->adress }}">{{ $building->adress }}</option>
@@ -117,10 +97,12 @@
                                     <label for="content_demand">Contenu de votre demande :</label>
                                     <textarea class="form-control" rows="5" id="content_demand" name="content"></textarea>
                                 </div> 
-                                <button type="submit" class="btn btn-primary">Valider</button>
+                                <!-- CAPTCHA -->
+                                <button id="close-modal" type="button" data-dismiss="modal" class="btn btn-dark mr-auto closemodal">Annuler</button>
+                                <button id="submit-modal" type="submit" class="btn btn-primary">Valider</button>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" data-dismiss="modal" class="btn btn-dark mr-auto closemodal">Annuler</button>
+                    
                     
                 </div>
                 </form>

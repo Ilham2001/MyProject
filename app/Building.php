@@ -27,7 +27,7 @@ class Building extends Model
      */
     public function interventions()
     {
-        return $this->hasMany('App\Intervention','id');
+        return $this->hasMany('App\Intervention','id_building','id');
     }
     /**
      * Building has many documents

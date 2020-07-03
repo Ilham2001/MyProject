@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddNameAndPathToDocumentsTable extends Migration
+class AddNameAndPathToQuotesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddNameAndPathToDocumentsTable extends Migration
      */
     public function up()
     {
-        Schema::table('documents', function (Blueprint $table) {
-            $table->string('document_path');
+        Schema::table('quotes', function (Blueprint $table) {
+            $table->string('quote_path');
         });
     }
 
@@ -25,7 +25,7 @@ class AddNameAndPathToDocumentsTable extends Migration
      */
     public function down()
     {
-        Schema::table('documents', function (Blueprint $table) {
+        Schema::table('quotes', function (Blueprint $table) {
             //
         });
     }

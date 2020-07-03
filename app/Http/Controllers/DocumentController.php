@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Document;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Response;
 
 class DocumentController extends Controller
 {
@@ -15,7 +16,8 @@ class DocumentController extends Controller
      */
     public function index()
     {
-        $documents = DB::table('documents')->get();
+        $documents = Document::all();
+        
         return view('onglets.documents',compact('documents'));
     }
     /**
@@ -35,5 +37,22 @@ class DocumentController extends Controller
             ->get();
         //dd($documents);
         return view('onglets.documents',['documents' => $documents]);
+    }
+    /**
+     * Download File
+     */
+    public function show($id) {
+        //dd("here");
+        $document = Document::find($id);
+        //dd($document);
+
+
+        $file = public_path(). "/download/Documents/doc1.pdf";
+
+        $headers = array(
+            'Content-Type: application/pdf',
+          );
+
+        return Response::download($file, 'doc1.pdf', $headers);
     }
 }

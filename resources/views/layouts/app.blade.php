@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Immobilis</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -22,10 +22,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
     <style>
-        img.logo {
-           height : 25%;
-           width : 30%;
-        }
+        
     </style>
     @livewireStyles
 </head>
@@ -35,7 +32,7 @@
             <div class="container">
             @if(Route::has('home'))
                 <a class="navbar-brand" href="{{ url('/home') }}">
-                    <img class="logo" src="DT groupe.jpg" style="height : 20%; width : 25%;" >
+                    <img class="logo" src="DT groupe.jpg">
                    
                 </a>
             @endif
@@ -51,11 +48,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
                                 </li>
                             @endif
                         @else
@@ -82,7 +79,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main >
             <div class="main">
             <!-- SIDEBAR -->
             @auth

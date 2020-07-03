@@ -36,15 +36,21 @@ class InterventionController extends Controller
         $building = $inter->building;
         $staffs = $inter->staffs;
         $call_record = $inter->call_record;
+
+        //dd($staffs);
        //dd($intervention->call_record);
 
         return view('onglets.interventionDetail')
             ->with('intervention',$inter)
             ->with('demand',$demand)
             ->with('building',$building)
-            ->with('staffs',$staffs);
-            //->with('call_record',$call_record);
+            ->with('staffs',$staffs)
+            ->with('call_record',$call_record);
     }
+    
+    /**
+     * Search for specific intervention
+     */
     public function searchInter(Request $request)
     {
         $from = request('startDate');

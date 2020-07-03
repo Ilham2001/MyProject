@@ -19,7 +19,7 @@ class Client extends Model
 
     public function user()
     {
-        return $this->hasMany('App\User','id');
+        return $this->hasMany('App\User','client_id','id');
     }
 
 }

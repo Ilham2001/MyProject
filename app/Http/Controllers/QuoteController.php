@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Quote;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Response;
 
 class QuoteController extends Controller
 {
@@ -38,5 +39,24 @@ class QuoteController extends Controller
             ->get();
         //dd($quotes);
         return view('onglets.quotes', ['quotes' => $quotes]);
+    }
+    /**
+     * 
+     */
+    public function show($id) {
+        //dd("here");
+        $quote = Quote::find($id);
+        //dd($quote);
+
+
+        $file_path = $quote->quote_path;
+        $path = public_path(). $file_path;
+        $file_name = $quote->quote_name;
+
+        $headers = array(
+            'Content-Type: application/pdf',
+          );
+
+        return Response::download($path, $file_name, $headers);
     }
 }

@@ -578,6 +578,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  height : 60px;
 }
 
 @media (min-width: 576px) {
@@ -4550,10 +4551,11 @@ input[type=button].btn-block {
 }
 
 .navbar-brand {
-  display: inline-block;
+  display: left;
   padding : 20px;
-  padding-top: 0.32rem;
-  padding-bottom: 0.32rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right : 70px;
   margin-right: 1rem;
   font-size: 1.125rem;
   line-height: inherit;
@@ -5032,7 +5034,7 @@ input[type=button].btn-block {
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: white;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
@@ -8662,7 +8664,7 @@ button.bg-dark:focus {
 
 .pb-4,
 .py-4 {
-  padding-bottom: 1.5rem !important;
+  padding-bottom: 0px !important;
 }
 
 .pl-4,
@@ -10949,7 +10951,7 @@ a.text-dark:focus {
         bottom: 0;
         background-color: rgb(0, 51, 102);
         padding-top: 50px;
-        margin-top : 100px;
+        margin-top : 75px;
     }
 
     .sidebar h1 {
@@ -10982,3 +10984,47 @@ a.text-dark:focus {
     .cell-center {
       text-align: center;
   }
+  img.logo {
+    height : 130%;
+    width : 40%;
+    padding : 0%;
+    margin : 0%;
+    left : 10px;
+ }
+ img.login {
+   text-align: center;
+ }
+ #close-modal {
+   float : left;
+ }
+ #submit-modal {
+   float : right;
+ }
+ #new-demand {
+  float : right;
+  margin : 20px;
+  margin-right : 2px;
+  padding : 8px;
+}
+table {
+  padding : 10px;
+}
+.intervention-form {
+ display: block;
+}
+.quote-form {
+display: none;
+}
+.email-form {
+  display : none;
+}
+.search-box {
+  padding : 10px;
+  margin-top : 10px;
+  margin-bottom : 0px ;
+}
+}
+#search-submit {
+  float : right;
+}
+

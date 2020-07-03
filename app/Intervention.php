@@ -44,13 +44,13 @@ class Intervention extends Model
      */
     public function staffs()
     {
-        return $this->hasMany('App\Staff','id');
+        return $this->hasMany('App\Staff','id_intervention','id');
     }
     /**
      * Intervention has one call record
      */
     public function call_record()
     {
-        return $this->hasOne('App\CallRecord','id');
+        return $this->hasOne('App\CallRecord','id_intervention','id');
     }
 }

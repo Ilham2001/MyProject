@@ -69,22 +69,23 @@ Route::get('/home', 'HomeController@index')->name('home');
  * Intervention Routes
  */
  Route::get('/interventions/{id}', 'InterventionController@show');
- Route::get('/staffs','StaffController@index');
  Route::get('/searchInter','InterventionController@searchInter');
- 
- 
  
  /**
   * Quote Routes
   */
 Route::get('/searchQuote','QuoteController@searchQuote');
+Route::get('/quotes/{id}','QuoteController@show');
 
 /**
  * Document Routes
  */
 Route::get('/searchDoc ','DocumentController@searchDoc');
+Route::get('/documents/{id}','DocumentController@show');
 
  /**
   * Mail Routes
   */
 Route::get('/email','DemandController@store');
+
+Route::get('/staffs','StaffController@index');

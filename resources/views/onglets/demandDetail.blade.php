@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <h3>Détail demande</h3>
+  <br><h3>Détail demande</h3><br><br>
     <table class="table table-bordered">
           <thead>
               <tr>
